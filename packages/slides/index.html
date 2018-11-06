@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Building StencilJS with TypeScript</title>
+    <link href="//fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <script src="./node_modules/stencil-demo-components/dist/stencil-demo-components.js"></script>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+    </script>
+
+    <style>
+
+      :root {
+        --stencil-grape: rgb(88, 81, 255);
+      }
+      .reveal h2 {
+        margin-bottom: 40px;
+      }
+      body {
+        background: url(images/background.jpg);
+        background-size: cover;
+      }
+      body > div.reveal {
+        font-family: 'Poppins', sans-serif;
+        color: #B9C0D2;
+      }
+      div.reveal b {
+        font-weight: bold;
+        color: #FFF;
+      }
+      img.emoji {
+        width: 45px;
+      }
+      h2 img.emoji {
+        width: 52px;
+      }
+      .right-info-img {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .swapgroup .fragment:not(.current-fragment) {
+        display: none;
+      }
+      .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+        font-family: 'Montserrat', sans-serif;
+        color: #FFF;
+        text-transform: none;
+      }
+      .reveal section img.nostyle {
+        background: none;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+      }
+      .reveal section img.rounded {
+        border-radius: 8px;
+      }
+      .example-num {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 0.8em;
+        color: grey;
+      }
+      b {
+        font-weight: normal;
+        color:aqua;
+      }
+      i {
+        font-style: normal;
+        color: yellow;
+      }
+      img.trans {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+      img-mask {
+        min-height: 740px;
+        display: block;
+      }
+      .reveal ul.links a {
+        font-size: 0.7em;
+      }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body style="background-image: 'images/background.jpg'">
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h3>Building StencilJS with TypeScript</h3>
+          <p>
+            <github-intro userid="jthoms1"></github-intro>
+          </p>
+          <aside class="notes">
+            <li>Hi I am Josh Thomas, You can find me on github/twitter as jthoms1.
+            <li>Today I will be talking about how we built Stencil with TypeScript
+          </aside>
+        </section>
+
+        <section>
+          <h2>About Me</h2>
+          <ul>
+            <li>Senior Developer at Ionic</li><br/>
+            <li class="fragment">Ionic Open Source core team member</li>
+          </ul>
+          <aside class="notes">
+            <li>Senior Developer at Ionic
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
+          <h2>What is Ionic?</h2>
+          <div style="width: 720px; overflow: hidden; margin: 0 auto;">
+            <figure style="width: 300px; float: left">
+              <figcaption>Android</figcaption>
+              <img class="nostyle" src="images/ionic-views-android.png"/>
+            </figure>
+            <figure style="width: 300px; float: right">
+              <figcaption>iOS</figcaption>
+              <img class="nostyle" src="images/ionic-views-ios.png"/>
+            </figure>
+          </div>
+          <aside class="notes">
+            <li>How many people here know what Ionic is?
+            <li>Cross platform Web UI kit.
+            <li>Web App in one codebase deployed to multiple platforms.
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
+          <h2>What is Ionic?</h2>
+          <ul style="min-height: 800px">
+            <li>Framework for mobile applications</li><br/>
+            <li class="fragment">v1 AngularJS / v2 Angular</li><br/>
+            <li class="fragment">TypeScript All the Things <img width=75 style="margin-bottom: -10px" class="nostyle" src="images/all-the-things.png"/></li>
+          </ul>
+          <aside class="notes">
+            <li>Bootstrap for mobile.
+            <li>Time for a vanity metric. We are the number 3 starred Github project based on Typescript</li>
+            <li>Component library/framework built originally on AngularJS and then Angular /w TypeScript. We
+              actually opted at the time to not support JavaScript with Angular and only support TypeScript. Which was a good thing.
+            <li>After this Typescript became the language of Ionic,
+              JavaScript wasn’t written anymore at the company. Our front-end libraries, our Node code, our websites,
+              our Webapps all in TypeScript.
+          </aside>
+        </section>
+
+        <section>
+          <h2>The JS ecosystem is changing</h2>
+          <ul style="padding-bottom: 245px; padding-right: 360px;">
+            <li class="fragment fade-in">"What is the <b>best</b> framework?"</li>
+          </ul>
+          <aside class="notes">
+            <li>We have noticed that over the last few years that the JS ecosystem is changing</li>
+            <li>The major frameworks are all really good. And their conceptual models are starting to
+              align more closely.
+            </li>
+          </aside>
+        </section>
+
+        <section>
+          <h2>The JS ecosystem is changing</h2>
+          <ul>
+            <li>"Which framework do you <b>prefer</b>?"</li><br/>
+            <li class="fragment fade-in">Ionic components should work with <b>any</b> framework or with <b>no</b> framework</li><br/>
+            <li class="fragment fade-in">Write once use everywhere</li>
+          </ul><br/>
+          <aside class="notes">
+            <li>What is the best framework, is no longer the question. The question is which framework do you prefer.
+            <li>Whatever your setup/framework we want our components to work there. Any framework (or no framework at all)
+            <li>In order to accomplish this we need to be agnostic. We wanted to have our Ionic codebase written in one
+              format and have it work in any website or web application.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Our Answer was Web Components</h2>
+          <img class="nostyle" src="images/web-component-logo.png"/>
+          <aside class="notes">
+            <li>This allows us to leverage the web platform for our components.</li>
+            <li>It was the right time, Chrome has full support Android/Desktop, Firefox is releasing support this week, and
+              Safari has full support iOS/MacOS, Edge/IE 11 can be polyfilled.
+            <li>So we found our answer and we started converting our 100+ components to web components.
+            <li>What we found was that we wanted more from what the vanilla web component experience, we wanted to smooth over
+              the edges. So we started to spend more time on our own abstractions to web components.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Why Build Stencil</h2>
+          <ul style="padding-right: 200px">
+            <li class="fragment">Others could value our abstractions</li><br/>
+            <li class="fragment">Stencil is a 'compiler' that generates Web Components
+              <img style="top: 30px; right: -152px" width=360 class="nostyle right-info-img" src="images/stencil-fits-in.png"/>
+            </li><br/>
+            <li class="fragment">Developer Experience(DX) and performance</li>
+          </ul>
+          <aside class="notes">
+            <li>We didn’t plan on building a new tool, we just wanted to improve Ionic, but after a few months of
+              work we realized that what we were building would be valuable to other software teams as well.
+            <li>We took the tool and moved it into a separate project from Ionic and we called it Stencil.
+            <li>Stencil is a compiler that generates Web Component from a simplified component interface
+            <li>2 most important things for us in building Stencil JS were Dev experience and the performance
+              of applications built using our components.</li>
+            <li>Web Components turned out to be much faster than we expected.</li>
+          </aside>
+        </section>
+
+        <section>
+          <br/><br/><br/>
+          <h2>Stencil</h2>
+          <queue-demo></queue-demo>
+          <aside class="notes">
+            <li>slides are in html, embed web components directly</li>
+            <li>This is a demo we use to show that we components are performant, this is animating the whole
+              tree and updated 729 text nodes every second.
+            </li>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Stencil DX</h2>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <ul style="width: 720px; min-height: 600px;">
+            <li>TypeScript</li><br/>
+            <li>Reactive Data-binding</li><br/>
+            <li>Async rendering queue</li><br/>
+            <li>Virtual DOM</li><br/>
+            <li>JSX</li>
+          </ul>
+          <aside class="notes">
+            <li>Inspiration came from a lot of places: Angular, React, Vue, etc.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Stencil Components</h2>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <ul style="width: 720px; min-height: 600px">
+            <li class="fragment">Be lazy loaded</li><br/>
+            <li class="fragment">Be type safe</li><br/>
+            <li class="fragment">Be as tiny as possible</li><br/>
+            <li class="fragment">Be future proof</li>
+          </ul>
+          <aside class="notes">
+            <li>Be lazy loaded is core of the architecture. When a component first hits the DOM we
+              download the cooresponding class code and then wire it up. Sounds like a lot of request but we group components
+            <li>Be type safe - devs can use stencil components with any framework and they should get full type support that
+              component.
+            <li>Be as tiny as possible with as few polyfills as possible.
+            <li>A component built today should work with library/frameworks of the future
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Stencil Components</h2>
+          <img width=590 class="nostyle blur-filter" src="images/component-code.png"/>
+          <aside class="notes">
+            <li>This is a pretty typical Stencil component</li>
+            <li>You can see right now that we make heavy use of decorators</li>
+            <li>Each component is written as a vanilla TS class</li>
+            <li>This component does not contain every decorator or method you might see
+              but I wanted to show this so that you can better visualize how it works.</li>
+            <li>Yes decorators are Stage 2 and experimental but it really doesn't matter to much
+              but more on that later</li>
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Stencil Components</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="208"
+            mask-top="0"/>
+          <aside class="notes">
+            <li>Class decorator - "Component" that accepts general metadata or information about the component
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Stencil Components</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="50"
+            mask-top="233"/>
+          <aside class="notes">
+            <li>Property Decorators</li>
+            <li>Prop - designates attributes or properties that can be passed to this component.
+              If a prop value changes the component reacts and rerenders.
+            <li>State - designates which class property is part of the components state.
+              The component reacts to changes in state and forces a rerender.
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Stencil Components</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="200"
+            mask-top="290"/>
+          <aside class="notes">
+            <li>Method Decorator - Watch - which accepts a prop/state name - designates a function to be called when the given state/prop changes in value.
+            <li>"componentWillLoad" is one of the many lifecycle methods. This one is called right before the component has loaded
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Stencil Components</h2>
+          <img-mask
+            src="images/component-code.png"
+            width="590"
+            mask-height="205"
+            mask-top="495"/>
+          <aside class="notes">
+            <li>render Method - returns a JSX representation of what should appear on the page. This method was reduced for brevity
+              JSX can seem foreign but it is super expressive and supported by TypeScript out of the box.
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Stencil Compiler</h2>
+          <ul style="width: 720px; min-height: 600px">
+            <li class="fragment">Our laundry list of requirements meant we needed to write a compiler</li><br/>
+            <li class="fragment">TypeScript powers the Stencil Compiler</li>
+          </ul>
+          <aside class="notes">
+            <li>We realized that in order to accomplish what we wanted we<br/>
+              needed more than just language/runtime support, we also need our own compiler.
+            <li>We were already using Typescript so the choice was obvious to build our own compiler
+              using the provided Compiler API. - Which turns out was a great coincidence
+          </aside>
+        </section>
+
+        <section>
+          <h2>How the sausage gets made <img class="nostyle emoji" src="images/hot-dog.png"</h2>
+          <aside class="notes">
+            <li>Does everyone know this expression, usually you want to just eat the sausage but you really don't want
+              to see the process.
+            <li>Today I am going to show some of the internals of the Stencil Compiler
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Metadata Collection</h2>
+          <img style="padding-bottom: 600px" class="nostyle" src="images/meta-component-code.png"/><br/>
+          <aside class="notes">
+            <li>There is alot of information provided by developers while they are writing components.
+              This can be valuable information while transforming and generating the resulting runtime code.</li>
+            <li>This is how you begin to use the TS Compiler API.  Create a program and pass it your source files</li>
+          </aside>
+        </section>
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Metadata Collection</h2>
+          <img style="padding-bottom: 200px" class="nostyle" src="images/meta-component-details.png"/>
+          <aside class="notes">
+            <li>This is a simplified version of our metadata collection method.</li>
+            <li>We walk the AST and collect the information and normalize the data into a standard format.
+            <li>What you can really gather is that the metadata is coming directly from the decorators.</li>
+            <li>We also test for valid data, we depend on types but sometimes you need more validation
+            <li>We infer things based on your prop types. This allows us to be more effecient in our runtime code.
+            <li>All the data we collected during the metadata collection lets add that back to the component in a straight forward way
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of Transforms</h2>
+          <img style="padding-bottom: 100px;" class="nostyle" src="images/transform-components.png"/>
+          <aside class="notes">
+            <li>After we have collected all of the metadata it is time to start transforming the code</li>
+            <li>Again we are going to use the TS API.  Each transform listed here runs over the AST of every file
+              included in the TS build. </li>
+            <li>Notice how some of the transforms are in a before and some in an after.  This designates if the transform
+              is to be executed before Typescripts own transforms or after.</li>
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of Transforms</h2>
+          <img-mask
+            src="images/transform-components.png"
+            width="910"
+            mask-height="40"
+            mask-top="180"></img-mask>
+          <aside class="notes">
+            <li>Removes all decorators that are specific to stencil, We don't need these at runtime
+              we have already collected all of the metadata</li>
+            <li>We will then add the component metadata back in but as simplified properties
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of Transforms</h2>
+          <img-mask
+            src="images/transform-components.png"
+            width="910"
+            mask-height="20"
+            mask-top="220"></img-mask>
+          <aside class="notes">
+            <li>If all components in your project do not use specific features then really non of your runtime
+              needs code around supporting those features. This allows us to reduce the amount of common code that needs
+              to be shipped to a browser.
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Power of Transforms</h2>
+          <img-mask
+            src="images/transform-components.png"
+            width="910"
+            mask-height="115"
+            mask-top="255"></img-mask>
+          <aside class="notes">
+            <li>Purge anything left not needed at runtime</li>
+            <li>Metadata lets us intelligently group components together when downloaded.</li>
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Seamless<sup style="font-size: 0.6em">*</sup> Upgrades</h2>
+          <ul>
+            <li>Codemods are possible when you control the output structure</li>
+          </ul>
+          <aside class="notes">
+            <li>We want older versions of stencil components to work with new releases.
+            <li>The asterisk is because have had to create 2 codemods so far and I cannot see that far into the future but we will try.</li>
+          </aside>
+        </section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/stencil-icon-small.png"/>
+          <h2>Docs generation</h2>
+          <ul>
+            <li>Metadata + JSDoc comments becomes docs</li>
+          </ul>
+          <aside class="notes">
+            <li>Remember all the metadata we collected, props and their
+              types/docs that is very nice for generating documentation.
+            <li>Similar to the idea of TypeDoc but very specific to components and their own usage
+          </aside>
+        </section>
+
+        <section>
+          <h2>We'll do it live. <img class="emoji nostyle" src="images/video-camera.png"/></h2>
+          <aside class="notes">
+            <li>I have included a few Stencil Components in this presentation</li>
+            <li>I want to show you how the work in a browser and some more real world code.</li>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Next Steps</h2>
+          <ul>
+            <li class="fragment">More documentation</li><br/>
+            <li class="fragment">Framework Integration Tests</li>
+          </ul>
+          <aside class="notes">
+            <li>More documentation on our road to 1.0
+            <li>Unit tests to ensure that we have full coverage and support for many frameworks
+          </aside>
+        </section>
+
+        <section>
+          <h2>Thank You! <img class="emoji nostyle" src="images/thanks.png"/></h2>
+          <ul class="links">
+            <li>
+              <a href="https://stenciljs.com/">https://stenciljs.com/</a>
+            </li>
+            <li>
+              <a href="https://github.com/jthoms1/stencil-typescript-transforms">https://github.com/jthoms1/stencil-typescript-transforms</a>
+            </li>
+            <li>
+              <a href="https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API">https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API</a>
+            </li>
+            <li>
+              <a href="https://astexplorer.net/">https://astexplorer.net</a>
+            </li>
+          </ul>
+          <aside class="notes">
+            <li>Link to our website</li>
+            <li>Link to my github repo for this presentation</li>
+            <li>Link to Typescript Compiler docs</li>
+            <li>Link to the most valuable resource if you are working with the TS AST.</li>
+          </aside>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script type="text/javascript">
+      var start = Date.now();
+      var baseEl = document.querySelector('queue-demo');
+      function update() {
+        baseEl.elapsed = Date.now() - start;
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    </script>
+
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
