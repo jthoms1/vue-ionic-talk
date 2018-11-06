@@ -1,11 +1,8 @@
-/*! Built with http://stenciljs.com */
-const { h, Context } = window.StencilDemoComponents;
-
 /**
  * This component accepts a github userid and then displays a brief summary of their details
  * including their avatar img.
  */
-class GithubIntro {
+export class GithubIntro {
     constructor() {
         /**
          * The github userid for the user that you would like to display
@@ -42,7 +39,5 @@ class GithubIntro {
     static get is() { return "github-intro"; }
     static get encapsulation() { return "scoped"; }
     static get properties() { return { "userData": { "state": true }, "userid": { "type": String, "attr": "userid", "watchCallbacks": ["fetchGithubData"] } }; }
-    static get style() { return "img.roundup[data-github-intro] {\n      border: 2px solid #fff;\n      height: 40px;\n      width: 40px;\n      border-radius: 23px;\n      display: block;\n      margin: -15px auto 0;\n    }"; }
+    static get style() { return "/**style-placeholder:github-intro:**/"; }
 }
-
-export { GithubIntro };

@@ -1,10 +1,7 @@
-/*! Built with http://stenciljs.com */
-const { h, Context } = window.StencilDemoComponents;
-
 /**
  * This component accepts an image and shows a window of view over a blur on the rest of the image
  */
-class ImgMask {
+export class ImgMask {
     constructor() {
         /**
          * The url to the image
@@ -48,7 +45,5 @@ class ImgMask {
     static get is() { return "img-mask"; }
     static get encapsulation() { return "scoped"; }
     static get properties() { return { "maskHeight": { "type": Number, "attr": "mask-height" }, "maskTop": { "type": Number, "attr": "mask-top" }, "src": { "type": String, "attr": "src" }, "width": { "type": Number, "attr": "width" } }; }
-    static get style() { return ".blur-filter[data-img-mask] {\n      filter: blur(2px) grayscale(80%);\n    }\n    .blur-window[data-img-mask] {\n      position: absolute;\n      right: 50%;\n      box-shadow: 0 0 22px -2px rgba(0, 0, 0, 0.2)\n    }"; }
+    static get style() { return "/**style-placeholder:img-mask:**/"; }
 }
-
-export { ImgMask };
