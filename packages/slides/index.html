@@ -103,6 +103,11 @@
       .reveal ul.links a {
         font-size: 0.7em;
       }
+      .reveal section img.nostyle.madjs {
+        display: inline-block;
+        margin-bottom: -50px;
+        margin-top: -24px;
+      }
     </style>
 
     <!--[if lt IE 9]>
@@ -123,7 +128,8 @@
           </p>
           <aside class="notes">
             <li>Hi I am Josh Thomas, You can find me on github/twitter as jthoms1.
-            <li>From Madison WI. So the I feel right at home in the cold. Story about below zero.
+            <li>From Madison WI. So the I feel right at home in the cold.
+            <li>Story about below zero celcius email.
           </aside>
         </section>
 
@@ -131,47 +137,66 @@
           <h2>About Me</h2>
           <ul>
             <li>Senior Developer at Ionic</li><br/>
-            <li class="fragment">Ionic Open Source core team member</li>
+            <li class="fragment">Ionic Open Source core team member</li><br/>
+            <li class="fragment">Organizer of <img width=200 class="nostyle madjs" src="images/madjs-logo.jpeg" /></li>
           </ul>
           <aside class="notes">
-            <li>Senior Developer at Ionic
+            <li>Senior Developer at Ionic for 2 1/2 years
             <li>Core member of the OS team
+            <li>Funny story Ionic was first announced at MadJS on Oct 14th 2013.
+              I actually presented directly before Max, so obviously my slide deck on
+              intro to Node and Express was overshadowed.
           </aside>
         </section>
 
         <section>
-          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>My Intro to Vue</h2>
-          <img width=100 class="nostyle" src="images/vue-intro-tweet.png" />
+          <p class="fragment"><img width=800 class="nostyle" src="images/vue-intro-tweet.png" /></p>
           <aside class="notes">
-            Gave a talk at my local meetup after many people asked for it.
+            <li>Gave a talk at my local meetup after many people asked for it.</li>
+            <li>You might be able to tell but my talk was on Monday Sept. 10</li>
           </aside>
         </section>
 
         <section>
           <h2>Why I like Vue</h2>
+          <ul>
+            <li class="fragment">Documentation</li><br/>
+            <li class="fragment">Robust toolchain</li><br/>
+            <li class="fragment">Batteries Included <span class="fragment">(as you wish)</span></li>
+          </ul>
           <aside class="notes">
-            What I like about Vue
-            Documentation
-            Toolchain
-            Batteries included if you want them.
+            <li>The Documentation for me is the gold standard. It is something to try to live up to.
+              Explanations, Examples. Shoutout to Chris Fritz.
+            <li>Toolchain even more so with CLI v3.
+            <li>Batteries included if you want them. This is one of my favorite things about Vue. It provides
+              you with a path to include libs like router or vuex. Sometimes opionions are liberating.
+            <li>Again I am telling you why I like it but if you are at this conference I am just preaching to the choir.
+          </aside>
+        </section>
+
+        <section>(Transition Needed)</section>
+
+        <section>
+          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
+          <h2>What is Ionic?</h2>
+          <ul>
+            <li></li>
+          </ul>
+          <aside class="notes">
+              <li>Open Source MIT licensed UI toolkit for building performant high-quality applications
+              <li>Cross-platform
+              <li>Web, iOS, Android, Electron
+              <li>Web Standards based
           </aside>
         </section>
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>What is Ionic?</h2>
-          <aside class="notes">
-              Open Source UI toolkit for building performant high-quality applications
-              Cross-platform
-              - Web, iOS, Android, Electron
-              Web Standards based
-          </aside>
-        </section>
-
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
-          <h2>What is Ionic?</h2>
+          <ul>
+            <li></li>
+          </ul>
           <aside class="notes">
               Beautiful design
               Simplicity
@@ -184,7 +209,7 @@
         </section>
 
         <section>
-          <h2>Why would you use Ionic</h2>
+          <h2>Why would you use Ionic?</h2>
           <aside class="notes">
               Web First, Adapts to the platform it is used on. Same codebase
               - Show example of iOS vs Android with video
@@ -192,6 +217,34 @@
               - Image of how Hybrid fits in (Capacitor not Cordova)
               Web App - Shared Codebase. Not code sharing this is a single codebase
               Desktop Application - Electron integration with Capacitor for native access.
+          </aside>
+        </section>
+
+        <section>
+          <h2>The JS ecosystem is changing</h2>
+          <ul>
+            <li>"Which framework do you <b>prefer</b>?"</li><br/>
+            <li class="fragment fade-in">Ionic components should work with <b>any</b> framework or with <b>no</b> framework</li><br/>
+            <li class="fragment fade-in">Write once use everywhere</li>
+          </ul><br/>
+          <aside class="notes">
+            <li>What is the best framework, is no longer the question. The question is which framework do you prefer.
+            <li>Whatever your setup/framework we want our components to work there. Any framework (or no framework at all)
+            <li>In order to accomplish this we need to be agnostic. We wanted to have our Ionic codebase written in one
+              format and have it work in any website or web application.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Our Answer was Web Components</h2>
+          <img class="nostyle" src="images/web-component-logo.png"/>
+          <aside class="notes">
+            <li>This allows us to leverage the web platform for our components.</li>
+            <li>It was the right time, Chrome has full support Android/Desktop, Firefox is releasing support this week, and
+              Safari has full support iOS/MacOS, Edge/IE 11 can be polyfilled.
+            <li>So we found our answer and we started converting our 100+ components to web components.
+            <li>What we found was that we wanted more from what the vanilla web component experience, we wanted to smooth over
+              the edges. So we started to spend more time on our own abstractions to web components.
           </aside>
         </section>
 
@@ -224,34 +277,6 @@
                 Capacitor over Cordova
             </aside>
           </section>
-
-        <section>
-          <h2>The JS ecosystem is changing</h2>
-          <ul>
-            <li>"Which framework do you <b>prefer</b>?"</li><br/>
-            <li class="fragment fade-in">Ionic components should work with <b>any</b> framework or with <b>no</b> framework</li><br/>
-            <li class="fragment fade-in">Write once use everywhere</li>
-          </ul><br/>
-          <aside class="notes">
-            <li>What is the best framework, is no longer the question. The question is which framework do you prefer.
-            <li>Whatever your setup/framework we want our components to work there. Any framework (or no framework at all)
-            <li>In order to accomplish this we need to be agnostic. We wanted to have our Ionic codebase written in one
-              format and have it work in any website or web application.
-          </aside>
-        </section>
-
-        <section>
-          <h2>Our Answer was Web Components</h2>
-          <img class="nostyle" src="images/web-component-logo.png"/>
-          <aside class="notes">
-            <li>This allows us to leverage the web platform for our components.</li>
-            <li>It was the right time, Chrome has full support Android/Desktop, Firefox is releasing support this week, and
-              Safari has full support iOS/MacOS, Edge/IE 11 can be polyfilled.
-            <li>So we found our answer and we started converting our 100+ components to web components.
-            <li>What we found was that we wanted more from what the vanilla web component experience, we wanted to smooth over
-              the edges. So we started to spend more time on our own abstractions to web components.
-          </aside>
-        </section>
 
         <section>
           <h2>Capacitor</h2>
