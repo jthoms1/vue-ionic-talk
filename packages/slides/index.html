@@ -135,79 +135,93 @@
           </ul>
           <aside class="notes">
             <li>Senior Developer at Ionic
+            <li>Core member of the OS team
           </aside>
-        </section>
-        <section>
-          <p>
-            Vue as a framework prides itself for providing an excellent developer experience out of the box
-            so devs can build awesome apps with it.
-          </p>
-          <p>
-            Ionic as a component library shares these same values while providing a great UI for any kind
-            of app. In this talk, we'll look at how we can use Ionic and Vue together to quickly create a
-            compelling mobile application that can be deployed to the iOS, Android, and the Web.
-          </p>
-          <ul>
-            <li>What is Ionic</li>
-            <li>Why do I care</li>
-            <li>Cool how does this relate to Vue</li>
-            <li>How do the communities intersect </li>
-            <li>get started</li>
-            <li>Demo</li>
-          </ul>
         </section>
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
-          <h2>What is Ionic?</h2>
-          <div style="width: 720px; overflow: hidden; margin: 0 auto;">
-            <figure style="width: 300px; float: left">
-              <figcaption>Android</figcaption>
-              <img class="nostyle" src="images/ionic-views-android.png"/>
-            </figure>
-            <figure style="width: 300px; float: right">
-              <figcaption>iOS</figcaption>
-              <img class="nostyle" src="images/ionic-views-ios.png"/>
-            </figure>
-          </div>
+          <h2>My Intro to Vue</h2>
+          <img width=100 class="nostyle" src="images/vue-intro-tweet.png" />
           <aside class="notes">
-            <li>How many people here know what Ionic is?
-            <li>Cross platform Web UI kit.
-            <li>Web App in one codebase deployed to multiple platforms.
+            Gave a talk at my local meetup after many people asked for it.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Why I like Vue</h2>
+          <aside class="notes">
+            What I like about Vue
+            Documentation
+            Toolchain
+            Batteries included if you want them.
           </aside>
         </section>
 
         <section>
           <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>What is Ionic?</h2>
-          <ul style="min-height: 800px">
-            <li>Framework for mobile applications</li><br/>
-            <li class="fragment">v1 AngularJS / v2 Angular</li><br/>
-            <li class="fragment">TypeScript All the Things <img width=75 style="margin-bottom: -10px" class="nostyle" src="images/all-the-things.png"/></li>
-          </ul>
           <aside class="notes">
-            <li>Bootstrap for mobile.
-            <li>Time for a vanity metric. We are the number 3 starred Github project based on Typescript</li>
-            <li>Component library/framework built originally on AngularJS and then Angular /w TypeScript. We
-              actually opted at the time to not support JavaScript with Angular and only support TypeScript. Which was a good thing.
-            <li>After this Typescript became the language of Ionic,
-              JavaScript wasn’t written anymore at the company. Our front-end libraries, our Node code, our websites,
-              our Webapps all in TypeScript.
+              Open Source UI toolkit for building performant high-quality applications
+              Cross-platform
+              - Web, iOS, Android, Electron
+              Web Standards based
           </aside>
         </section>
 
         <section>
-          <h2>The JS ecosystem is changing</h2>
-          <ul style="padding-bottom: 245px; padding-right: 360px;">
-            <li class="fragment fade-in">"What is the <b>best</b> framework?"</li>
-          </ul>
+          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
+          <h2>What is Ionic?</h2>
           <aside class="notes">
-            <li>We have noticed that over the last few years that the JS ecosystem is changing</li>
-            <li>The major frameworks are all really good. And their conceptual models are starting to
-              align more closely.
-            </li>
+              Beautiful design
+              Simplicity
+              Large component library
+              Some components reflect the native behavior for material design or for iOS such from Action Sheets to Virtual Scroll, Grid System
+              Nav + Tabs
+              Robust theming system based on css variables
           </aside>
         </section>
+
+        <section>
+          <h2>Why would you use Ionic</h2>
+          <aside class="notes">
+              Web First, Adapts to the platform it is used on. Same codebase
+              - Show example of iOS vs Android with video
+              Mobile App - WebView to access native code.
+              - Image of how Hybrid fits in
+              Web App - Shared Codebase.
+              Desktop Application - Electron integration with Capacitor for native access.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Ionic and Vue together</h2>
+          <aside class="notes">
+              How I think this initial experience interrelates to developing with Ionic.
+
+              - Easy of Use.
+              - From Vue Homepage - Approachable, Versatile, Performant (Progressive Framework)
+              - Excellent Documentation for Beginners and Experts
+              - Start with a little or Go all in from Day one.
+          </aside>
+        </section>
+
+        <section>
+          <h2>@ionic/vue</h2>
+          <aside class="notes">
+
+          </aside>
+        </section>
+
+        <section>
+            <h2>@ionic/vue</h2>
+            <aside class="notes">
+                Ionic was built in Angularjs then Angular
+                Back when Ionic 1 was developed AngularJS was the top framework, but things have changed. There are many choices out there today that provide an excellent experience
+                Ionic 4 was built in a way to provide support to all frameworks not just Angular
+                Capacitor over Cordova
+            </aside>
+          </section>
 
         <section>
           <h2>The JS ecosystem is changing</h2>
@@ -238,13 +252,44 @@
         </section>
 
         <section>
+          <h2>Capacitor</h2>
+          <aside class="notes">
+              Spiritual successor to Cordova
+              Built into the Ionic CLI
+              Builds occur in XCode and Android Studio
+          </aside>
+        </section>
+
+        <section>
+          <h2>Using Ionic in Vue</h2>
+          <aside class="notes">
+              Show conference app.
+              Show usages
+              - Install
+              - Component Integrations
+              - Controllers
+              Build and deploy to emulator -> iOS
+              Give short URL to visit PWA.
+          </aside>
+        </section>
+
+        <section>
+          <h2>lets see this work</h2>
+          <aside class="notes">
+            Live Coding
+            - Start Vue project
+            - Install @ionic/vue
+            - Build and deploy to emulator -> iOS
+          </aside>
+        </section>
+
+        <section>
           <h2>Next Steps</h2>
           <ul>
             <li class="fragment">More documentation</li><br/>
           </ul>
           <aside class="notes">
-            <li>More documentation on our road to 1.0
-            <li>Unit tests to ensure that we have full coverage and support for many frameworks
+            Wrap up.
           </aside>
         </section>
 
@@ -253,10 +298,6 @@
           <ul class="links">
           </ul>
           <aside class="notes">
-            <li>Link to our website</li>
-            <li>Link to my github repo for this presentation</li>
-            <li>Link to Typescript Compiler docs</li>
-            <li>Link to the most valuable resource if you are working with the TS AST.</li>
           </aside>
         </section>
 
