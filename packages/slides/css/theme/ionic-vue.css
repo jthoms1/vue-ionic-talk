@@ -1,0 +1,109 @@
+body {
+  background-color: #23303e;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: system-ui, sans-serif;
+  font-size: 38px;
+}
+
+::selection {
+  background-color: #4fc08d;
+}
+
+.reveal {
+  line-height: 1.45;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal a {
+  color: #4fc08d;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 0.65em;
+}
+
+.reveal h1 {
+  font-size: 5rem;
+}
+
+.reveal h2 {
+  font-size: 4rem;
+}
+
+.reveal h3 {
+  font-size: 2.75rem;
+}
+
+.reveal h4 {
+  font-size: 2rem;
+}
+
+.reveal h5 {
+  font-size: 1.5rem;
+}
+
+.reveal h6 {
+  font-size: 1.2rem;
+}
+
+.reveal ul {
+  list-style-type: circle;
+}
+
+.reveal .progress {
+  background-color: rgba(0,0,0,0.1);
+  height: 10px;
+}
+
+.reveal .progress span {
+  background-color: #4fc08d;
+}
+
+.reveal .controls div {
+  opacity: 0.1;
+}
+
+.reveal .controls {
+  --controls-color: #11171d;
+}
+.reveal .controls div.navigate-left  { border-right-color: var(--controls-color); }
+.reveal .controls div.navigate-right { border-left-color: var(--controls-color); }
+.reveal .controls div.navigate-down  { border-top-color: var(--controls-color); }
+.reveal .controls div.navigate-up    { border-bottom-color: var(--controls-color); }
+
+section.interstitial {
+  text-align: center;
+}
+
+section.interstitial > * {
+  color: #23303e;
+  margin: 0;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+}
+
+.contact img {
+  border-radius: 50%;
+  border: solid 3px #fff;
+  display: block;
+  height: 80px;
+  margin-left: 0.5em;
+  width: 80px;
+}
+
+.contact a {
+  text-decoration: none;
+}
