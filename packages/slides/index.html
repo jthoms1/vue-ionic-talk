@@ -62,9 +62,9 @@
           <aside class="notes">
             <li>Senior Developer at Ionic for 2 1/2 years
             <li>Core member of the OS team
-            <li>Funny story Ionic was first announced at MadJS on Oct 14th 2013.
-              I actually presented directly before Max, so obviously my slide deck on
-              intro to Node and Express was overshadowed.
+            <li>Funny story, Ionic Framework was first announced at MadJS in 2013.
+              I presented directly before Max, so obviously my slide deck on
+              intro to Node and Express was overshadowed. And a few years later I went to work for him.
           </aside>
         </section>
 
@@ -72,12 +72,14 @@
           data-background-color="#f0f0f0"
           data-background-image="/images/vue-intro-tweet.png"
           data-background-size="1000px">
-            <aside class="notes">
-              <li>Gave a talk at MadJS after many people had asked for one.</li>
-              <li>You might be able to tell but my talk was on Monday Sept. 11 and I thought myself Vue on Sept 10th.</li>
-              <li>This was very surprising to me.  I learned it and built an app with it in the same day</li>
-              <li>It felt nice and I built an app that worked and I had confidence that it was built with best practices</li>
-            </aside>
+          <aside class="notes">
+            <li>
+              Being the organizer of a Meetup there are times where you need to step up and speak.
+            <li>So I keep a list of topics that I am interested in learning so that if I need to speaker I can learn something new.
+            <li>I thought myself Vue the day before my presentation</li>
+            <li>This was very surprising to me.  I learned it and built an app with it in the same day</li>
+            <li>I built an app that worked and I had confidence that it was built with best practices</li>
+          </aside>
         </section>
 
         <section>
@@ -94,7 +96,7 @@
             <li>Toolchain even more so with CLI v3 with the new scaffolding and the Plugin Architecture
             <li>Batteries included if you want them. This is one of my favorite things about Vue. It provides
               you with a path to include libs like router or vuex. Sometimes opionions are liberating.
-            <li>I am a big proponent for Typescript so I love having support included with the libraries
+            <li>I am a big proponent for Typescript.
               Happy to hear Vue 3 is going to be written in TypeScript
           </aside>
         </section>
@@ -104,6 +106,7 @@
           <aside class="notes">
             <li>Again I am telling you why I like it but if you are at this conference I am just preaching to the choir.
             <li>I just wanted to provide some background on what I value while working with Vue.
+            <li>My talk title "A Vue from Ionic" is alluding to how we see Vue from our perspective at Ionic.
           </aside>
         </section>
 
@@ -124,17 +127,17 @@
             <img width=500 class="nostyle" src="images/ionic-stack-4.png"/>
           </section>
           <aside class="notes">
-            HOW IONIC FITS
+            HOW IONIC FITS TOGETHER
             <li>Ionic is a framework for creating high quality applications
-            <li>NOT REALLY A FRAMEWORK
             <li>It is a collection of CSS + Javascript resources
+            <li>We call it the Ionic Framework because we provide more value than just components.
             <li>--------------</li>
             <li>The code is built in such a way that its components can be used with a number
               of different frameworks.
-            <li>We currently offically support Angular and Vanilla JS</li>
-            <li>But this is changing and we will be supporting more frameworks</li>
+            <li>We currently only offically support Angular and Vanilla JS</li>
+            <li>But this is changing very soon</li>
             <li>--------------</li>
-            <li>Ionic also provides solutions for your appliction to interact with native layers through bridges</li>
+            <li>Ionic also provides solutions for your appliction to interact with native devices through bridges</li>
             <li>We have 2 ways of accomplishing this. One of these is Cordova and the other is Capacitor which I will be talking about later</li>
             <li>This means that you can also deploy your application to iOS, Android, and Electron. Obviously you can also ship it as a PWA</li>
           </aside>
@@ -151,6 +154,8 @@
             <li class="fragment">Use a native bridge for device apis</li>
           </ul>
           <aside class="notes">
+            <li>Our stats show that Monthly almost every country in the world uses Ionic today.
+            <li>Except for one. North Korea
             <li>The components range from buttons, to dialogs to form toggles, inputs, alerts.
             <li>One of the things that is very unique about all of our components is that they are built
               for both iOS and Material Design.
@@ -166,13 +171,13 @@
           <h2>What is Ionic?</h2>
           <p>Video goes here...</p>
           <aside class="notes">
-            <li>Beautiful design - We have some very talented designers. One of our founders is a designer. BY DEFAULT THIS JUST LOOKS GREAT BECAUSE WE DO IT FOR YOU
-            <li>Simplicity - The components are pleasing to the eye both visually and in the simplicity of their usage.
+            <li>Beautiful design - We place a lot of value on the quality of our component designs. The nice thing
+              is that it just looks this great out of the box.
             <li>Notice that components reflect the native behavior for material design or for iOS such from Action Sheets or dialogs.
             <li>We have 2 svg based icon sets as well. One for iOS and one for Material.  You might have used them before.
                Aptly named Ionicons</li>
             <li>Robust theming system based on css variables. So you can create a theme specific to your brand or change
-              your themes real time in a white labeled application. This is a nice advantage over using sass for rebuilds.
+              your themes real time in a white labeled application. This is a nice advantage over using something like sass.
           </aside>
         </section>
 
@@ -182,7 +187,7 @@
             <li>Our documentation provides live examples, best practices, and example code.
             <li>All supported frameworks also have code that corresponds to the live examples.
             <li>Ionic is written entirely in Typescript so our API documentation gets generated on release
-              to ensure that we stay up to date.  Nothing worse than outdated documenatation.
+              to ensure that they stay up to date.  Nothing worse than outdated documenatation.
           </aside>
         </section>
 
@@ -202,17 +207,25 @@
           </aside>
         </section>
 
+        <section data-background-image="images/ionic-with-angular.png">
+          <aside class="notes">
+            <li>Historically if you wanted to use Ionic you had to write your app in Angular.
+            <li>Ionic was originally built in AngularJS and then Ionic 2/3 were both written in Angular with Typescript
+            <li>We have always been built with Angular.
+            <li>Many devs left AngularJS for other frameworks they have been asking for Ionic in their respective destinations
+          </aside>
+        </section>
+
         <section>
           <h2>The JS ecosystem is changing</h2>
           <ul>
-            <li>"Which framework do you <b>prefer</b>?"</li>
-            <li class="fragment fade-in">Ionic components should work with <b>any</b> framework or with <b>no</b> framework</li>
-          </ul>
+            <li>"Which framework do you <b>prefer</b>?"</li><br/>
+            <li class="fragment">Ionic components should work with <b>any</b> framework or with <b>no</b> framework</li><br/>
+          </ul><br/>
           <aside class="notes">
-            <li>Ionic was originally built in AngularJS and then Ionic 2/3 were both written in Angular with Typescript
             <li>What is the best framework, is no longer the question. The question is which framework do you prefer.
             <li>Whatever your setup/framework we want our components to work there. Any framework (or no framework at all)
-            <li>Our answer was web components
+            <li>We were able to accomplish this with web components.
           </aside>
         </section>
 
@@ -230,12 +243,12 @@
           data-background-image="/images/twitter-poll.png"
           data-background-size="1000px"
           data-background-color="#f0f0f0">
-            <aside class="notes">
-              <li>We WANTED TO BRING A GREAT EXPERIENCE TO IONIC AND VUE DEVELOPERS. TALK ABOUT THE BRIDGING OF THESE DECISION</li>
-              <li>It made sense for us. Vue has been on a metoric rise in popularity
-              <li>Also if you take a look Vue has excellent support for web components so it required less custom bindings
-              <li>I posted a poll and here are the results.  Not very scientific but it did provide us with some insight.
-            </aside>
+          <aside class="notes">
+            <li>I posted a poll and here are the results.  Not very scientific but it did provide us with some insight.
+            <li>This was not the results I expected.  I though React would have won considering it has a larger user base.
+            <li>But it made us start talking about more about it internally
+            <li>We saw many similarities between the Ionic and Vue Projects especially in our shared values.</li>
+          </aside>
         </section>
 
         <section>
@@ -247,15 +260,16 @@
             <li class="fragment">Start with a little or a lot</li>
           </ul>
           <aside class="notes">
-              <li></li>How I think this initial experience interrelates to developing with Ionic.
-              <li>Easy of Use.
-              <li>From Vue Homepage - Approachable, Versatile, Performant (Progressive Framework)
-              <li>Excellent Documentation for Beginners and Experts
-              <li>Start with a little or Go all in. Use some components or use build entire apps in Ionic.
-              <li>We are a small team and working on multiple releases of Ionic can take some time.</li>
-              <li>Forunatly we have great partners.
-              <li>Modus Create approached us and let us know that they wanted to start building Ionic Vue
-              <li>They created a simple Ionic Vue application to prove its usecase.
+            <li>How I think this initial experience interrelates to developing with Ionic.
+            <li>Easy of Use.
+            <li>From Vue Homepage - Approachable, Versatile, Performant (Progressive Framework)
+            <li>Excellent Documentation for Beginners and Experts
+            <li>Start with a little or Go all in. Use some components or use build entire apps in Ionic.
+            <li>--------------</li>
+            <li>We are a small team and working on multiple releases of Ionic can take some time.</li>
+            <li>Forunatly we have great trusted partners.
+            <li>Modus Create approached us and let us know that they really wanted Ionic for Vue
+            <li>They created a simple Ionic Vue application to prove its usecase.
           </aside>
         </section>
 
@@ -263,7 +277,7 @@
           <aside class="notes">
             <li>The app is called Beep which allows you to test
               if your username/email or password have been found on hacked lists.
-            <li>This video shows a demonstration of it running on Android.
+            <li>This video is a demonstration of it running on Android.
           </aside>
         </section>
 
@@ -279,15 +293,25 @@
           <aside class="notes">
             CONFIDENCCE IN THE APP AND TELL PEOPLE TO GO TRY THE APPLICATION
             <li>PWA / iOS / Android
+            <li>This is a small app that was a proof of concept.  Go to the PWA now and try it.
+            <li>After seeing them create this app we got excited and knew that we needed to move forward.
+          </aside>
+        </section>
+
+        <section>
+          Ionic Vue Announcement
+          <aside class="notes">
+            NOW YOU HAVE SEEN WHAT IONIC CAN OFFER HOW DO YOU GET STARTED
           </aside>
         </section>
 
         <section>
           <h2>@ionic/vue</h2>
           <pre class="fragment">
+MAKE THE BACKGROUND TRANSPARENT AND ENLARGE TEXT
 <code>
 import Vue from 'vue';
-import Ionic, { Controllers } from '@ionic/vue';
+import Ionic from '@ionic/vue';
 
 Vue.use(Ionic);
 
@@ -299,8 +323,9 @@ new Vue({
 </code>
           </pre>
           <aside class="notes">
-            This is not Ionic where you use Vue.
-            This is a Vue application where you are using Ionic.
+            <li>We built @ionic/vue as a plugin
+            <li>This is not Ionic where you use Vue.
+            <li>With this one line of code you know have access to all of the Ionic Components.
           </aside>
         </section>
 
@@ -330,17 +355,20 @@ new Vue({
         <section>
           <h2>Next Steps</h2>
           <ul>
-            <li class="fragment">Community Testing</li>
-            <li class="fragment">More documentation</li>
+            <li class="fragment">Community Testing</li><br/>
+            <li class="fragment">Documentation</li><br/>
           </ul>
           <aside class="notes">
-            Wrap up. and Call to action
+            <li>This is where I ask you to give it a try and give feedback.
+            <li>Slack + Github
+            <li>Before we go Beta we will have the documentation updated on our docs.
           </aside>
         </section>
 
         <section>
-          <h2>Thank You! <img class="emoji nostyle" src="images/thanks.png"/></h2>
+          <h2>Thank You!</h2>
           <ul class="links">
+
           </ul>
           <aside class="notes">
           </aside>
