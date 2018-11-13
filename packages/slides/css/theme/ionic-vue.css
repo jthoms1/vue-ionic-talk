@@ -107,3 +107,9 @@ section.interstitial > * {
 .contact a {
   text-decoration: none;
 }
+
+.reveal code {
+  background: transparent;
+  font-family: "SF Mono", monospace;
+  font-size: 28px;
+}
