@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/theme/ionic-vue.css" id="theme">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -27,105 +27,24 @@
 
     </script>
 
-    <style>
-
-      :root {
-        --stencil-grape: rgb(88, 81, 255);
-      }
-      .reveal h2 {
-        margin-bottom: 40px;
-      }
-      body {
-        background: url(images/background.jpg);
-        background-size: cover;
-      }
-      body > div.reveal {
-        font-family: 'Poppins', sans-serif;
-        color: #B9C0D2;
-      }
-      div.reveal b {
-        font-weight: bold;
-        color: #FFF;
-      }
-      img.emoji {
-        width: 45px;
-      }
-      h2 img.emoji {
-        width: 52px;
-      }
-      .right-info-img {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .swapgroup .fragment:not(.current-fragment) {
-        display: none;
-      }
-      .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
-        font-family: 'Montserrat', sans-serif;
-        color: #FFF;
-        text-transform: none;
-      }
-      .reveal section img.nostyle {
-        background: none;
-        border: none;
-        box-shadow: none;
-        margin: 0;
-      }
-      .reveal section img.rounded {
-        border-radius: 8px;
-      }
-      .example-num {
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        font-size: 0.8em;
-        color: grey;
-      }
-      b {
-        font-weight: normal;
-        color:aqua;
-      }
-      i {
-        font-style: normal;
-        color: yellow;
-      }
-      img.trans {
-        background-color: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        margin: 0 !important;
-      }
-      img-mask {
-        min-height: 740px;
-        display: block;
-      }
-      .reveal ul.links a {
-        font-size: 0.7em;
-      }
-      .reveal section img.nostyle.madjs {
-        display: inline-block;
-        margin-bottom: -16px;
-        margin-top: -24px;
-      }
-    </style>
 
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
   </head>
 
-  <body style="background-image: 'images/background.jpg'">
+  <body>
 
     <div class="reveal">
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h3>A Vue from Ionic</h3>
-          <p>
-            <github-intro userid="jthoms1"></github-intro>
-          </p>
+          <h1>A Vue from Ionic</h1>
+          <div class="contact">
+            <span>Josh Thomas / <a href="https://github.com/jthoms1">@jthoms1</a></span>
+            <img src="/images/avatar.jpeg" alt="Avatar"/>
+          </div>
           <aside class="notes">
             <li>Hi I am Josh Thomas, You can find me on github/twitter as jthoms1.
             <li>From Madison WI. So the I feel right at home in the cold.
@@ -136,9 +55,9 @@
         <section>
           <h2>About Me</h2>
           <ul>
-            <li>Senior Developer at Ionic</li><br/>
-            <li class="fragment">Ionic Open Source core team member</li><br/>
-            <li class="fragment">Organizer of <img width=100 class="nostyle madjs" src="images/madjs-logo.jpeg" /></li>
+            <li>Senior Developer at Ionic</li>
+            <li class="fragment">Ionic Open Source core team member</li>
+            <li class="fragment">Organizer of MadJS</li>
           </ul>
           <aside class="notes">
             <li>Senior Developer at Ionic for 2 1/2 years
@@ -149,23 +68,24 @@
           </aside>
         </section>
 
-        <section>
-          <h2>My Intro to Vue</h2>
-          <p><img width=500 class="nostyle" src="images/vue-intro-tweet.png" /></p>
-          <aside class="notes">
-            <li>Gave a talk at MadJS after many people had asked for one.</li>
-            <li>You might be able to tell but my talk was on Monday Sept. 11 and I thought myself Vue on Sept 10th.</li>
-            <li>This was very surprising to me.  I learned it and built an app with it in the same day</li>
-            <li>It felt nice and I built an app that worked and I had confidence that it was built with best practices</li>
-          </aside>
+        <section
+          data-background-color="#f6f6f6"
+          data-background-image="/images/vue-intro-tweet.png"
+          data-background-size="60%">
+            <aside class="notes">
+              <li>Gave a talk at MadJS after many people had asked for one.</li>
+              <li>You might be able to tell but my talk was on Monday Sept. 11 and I thought myself Vue on Sept 10th.</li>
+              <li>This was very surprising to me.  I learned it and built an app with it in the same day</li>
+              <li>It felt nice and I built an app that worked and I had confidence that it was built with best practices</li>
+            </aside>
         </section>
 
         <section>
           <h2>Why I like Vue</h2>
           <ul>
-            <li>Documentation</li><br/>
-            <li class="fragment">Robust toolchain</li><br/>
-            <li class="fragment">Batteries Included <span class="fragment">(as you wish)</span></li><br/>
+            <li>Documentation</li>
+            <li class="fragment">Robust toolchain</li>
+            <li class="fragment">Batteries Included <span class="fragment">(as you wish)</span></li>
             <li class="fragment">TypeScript Support</li>
           </ul>
           <aside class="notes">
@@ -179,9 +99,8 @@
           </aside>
         </section>
 
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
-          <h2>"A Vue from Ionic"</h2>
+        <section class="interstitial" data-background-color="#4fc08d">
+          <h1>A Vue from Ionic</h1>
           <aside class="notes">
             <li>Again I am telling you why I like it but if you are at this conference I am just preaching to the choir.
             <li>I just wanted to provide some background on what I value while working with Vue.
@@ -189,12 +108,21 @@
         </section>
 
         <section>
-          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
-          <h2>What is Ionic?</h2>
-          <img width=500 class="nostyle" src="images/ionic-stack-1.png"/>
-          <img width=500 class="nostyle" src="images/ionic-stack-2.png"/>
-          <img width=500 class="nostyle" src="images/ionic-stack-3.png"/>
-          <img width=500 class="nostyle" src="images/ionic-stack-4.png"/>
+          <section>
+            <h2>What is Ionic?</h2>
+          </section>
+          <section>
+            <img width=500 class="nostyle" src="images/ionic-stack-1.png"/>
+          </section>
+          <section>
+            <img width=500 class="nostyle" src="images/ionic-stack-2.png"/>
+          </section>
+          <section>
+            <img width=500 class="nostyle" src="images/ionic-stack-3.png"/>
+          </section>
+          <section>
+            <img width=500 class="nostyle" src="images/ionic-stack-4.png"/>
+          </section>
           <aside class="notes">
             HOW IONIC FITS
             <li>Ionic is a framework for creating high quality applications
@@ -212,22 +140,14 @@
           </aside>
         </section>
         <section>
-          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>What is Ionic?</h2>
           <ul>
             <li>5M + Apps created</li>
             <li>30K+ Stack Overflow Questions</li>
             <li>100+ Meetups</li>
             <li>Open Source and MIT licensed</li>
-          </ul>
-        </section>
-
-        <section>
-          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
-          <h2>What is Ionic?</h2>
-          <ul>
-            <li class="fragment">Collection of over 100 components</li><br/>
-            <li class="fragment">Cross-platform apps with a single codebase</li><br/>
+            <li class="fragment">Collection of over 100 components</li>
+            <li class="fragment">Cross-platform apps with a single codebase</li>
             <li class="fragment">Use a native bridge for device apis</li>
           </ul>
           <aside class="notes">
@@ -242,11 +162,9 @@
           </aside>
         </section>
 
-
-
         <section>
-          <img width=100 class="nostyle right-info-img" src="images/ionic.png"/>
           <h2>What is Ionic?</h2>
+          <p>Video goes here...</p>
           <aside class="notes">
             <li>Beautiful design - We have some very talented designers. One of our founders is a designer. BY DEFAULT THIS JUST LOOKS GREAT BECAUSE WE DO IT FOR YOU
             <li>Simplicity - The components are pleasing to the eye both visually and in the simplicity of their usage.
@@ -271,9 +189,9 @@
         <section>
           <h2>When should you use Ionic?</h2>
           <ul>
-            <li class="fragment">You are building a mobile app</li><br/>
-            <li class="fragment">You are building a PWA / web app</li><br/>
-            <li class="fragment">You are building an desktop app</li><br/>
+            <li class="fragment">You are building a mobile app</li>
+            <li class="fragment">You are building a PWA / web app</li>
+            <li class="fragment">You are building an desktop app</li>
           </ul>
           <aside class="notes">
             <li>Web First, Adapts to the platform it is used on. Same codebase
@@ -287,15 +205,21 @@
         <section>
           <h2>The JS ecosystem is changing</h2>
           <ul>
-            <li>"Which framework do you <b>prefer</b>?"</li><br/>
-            <li class="fragment fade-in">Ionic components should work with <b>any</b> framework or with <b>no</b> framework</li><br/>
-          </ul><br/>
+            <li>"Which framework do you <b>prefer</b>?"</li>
+            <li class="fragment fade-in">Ionic components should work with <b>any</b> framework or with <b>no</b> framework</li>
+          </ul>
           <aside class="notes">
             <li>Ionic was originally built in AngularJS and then Ionic 2/3 were both written in Angular with Typescript
             <li>What is the best framework, is no longer the question. The question is which framework do you prefer.
             <li>Whatever your setup/framework we want our components to work there. Any framework (or no framework at all)
             <li>Our answer was web components
           </aside>
+        </section>
+
+        <section
+          data-background-image="/images/ionic-with-angular.png"
+          data-background-size="contain"
+          data-background-color="#020d16">
         </section>
 
         <section>
@@ -312,9 +236,9 @@
         <section>
           <h2>Ionic and Vue</h2>
           <ul>
-            <li class="fragment">Ease of Use</li><br/>
-            <li class="fragment">Approachable, Versatile, Performant <span class="fragment">(vuejs.org)</span></li><br/>
-            <li class="fragment">Excellent Documentation</li><br/>
+            <li class="fragment">Ease of Use</li>
+            <li class="fragment">Approachable, Versatile, Performant <span class="fragment">(vuejs.org)</span></li>
+            <li class="fragment">Excellent Documentation</li>
             <li class="fragment">Start with a little or a lot</li>
           </ul>
           <aside class="notes">
@@ -347,8 +271,8 @@
             <img width=250 class="nostyle" src="images/beep-logo.svg" />
           </h2>
           <ul>
-            <li>Created by <img width=350 class="nostyle" style="margin-bottom: -13px" src="images/modus-labs-logo.webp" /></li><br/>
-            <li><b>PWA</b>: beep.modus.app</li><br/>
+            <li>Created by <img width=350 class="nostyle" style="margin-bottom: -13px" src="images/modus-labs-logo.webp" /></li>
+            <li><b>PWA</b>: beep.modus.app</li>
             <li><b>Repo</b>: https://github.com/ModusCreateOrg/beep</li>
           </ul>
           <aside class="notes">
@@ -405,8 +329,8 @@ new Vue({
         <section>
           <h2>Next Steps</h2>
           <ul>
-            <li class="fragment">Community Testing</li><br/>
-            <li class="fragment">More documentation</li><br/>
+            <li class="fragment">Community Testing</li>
+            <li class="fragment">More documentation</li>
           </ul>
           <aside class="notes">
             Wrap up. and Call to action
@@ -431,6 +355,7 @@ new Vue({
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        backgroundTransition: 'none',
         controls: true,
         progress: true,
         history: true,
