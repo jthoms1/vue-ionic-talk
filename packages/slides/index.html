@@ -240,6 +240,7 @@
             <li>What is the best framework, is no longer the question. The question is which framework do you prefer.
             <li>Whatever your setup/framework we want our components to work there. Any framework (or no framework at all)
             <li>We were able to accomplish this with web components.
+            <li>We do have polyfills in place for IE11/Edge. But literally every other major browser supports them now.
           </aside>
         </section>
 
@@ -305,9 +306,10 @@
             <li><b>Repo</b>: https://github.com/ModusCreateOrg/beep</li>
           </ul>
           <aside class="notes">
-            CONFIDENCCE IN THE APP AND TELL PEOPLE TO GO TRY THE APPLICATION
-            <li>PWA / iOS / Android
             <li>This is a small app that was a proof of concept.  Go to the PWA now and try it.
+            <li>PWA / iOS / Android
+            <li>This is open source so you can take a look at the code.
+            <li>Single vue application and it is deployed as a PWA, in the App Store, and in Google Play Store.
             <li>After seeing them create this app we got excited and knew that we needed to move forward.
           </aside>
         </section>
@@ -346,25 +348,30 @@ new Vue({
         </section>
 
         <section>
-          <h2>Using Ionic Components in Vue</h2>
+          <h2>@ionic/vue components</h2>
+          <pre class="fragment">
+<code>
+<template>
+  <ion-select ok-text="Okay" cancel-text="Dismiss">
+    <ion-select-option value="satellite">Satellite</ion-select-option>
+    <ion-select-option value="terrain">Terrain</ion-select-option>
+    <ion-select-option value="traffic">Traffic</ion-select-option>
+  </ion-select>
+</template>
+</code>
+          </pre>
           <aside class="notes">
-              Show conference app.
-              Show usages
-              - Install
-              - Component Integrations
-              - Controllers
-              Build and deploy to emulator -> iOS
-              Give short URL to visit PWA.
+            <li>This is a very simple example of a .vue file with an ionic component.
+            <li>The components get lazy loaded so no registration
+            <li>With this little bit of code you can get a pretty versitle select experience that is Material or iOS
           </aside>
         </section>
 
         <section>
-          <h2>Live</h2>
+          <h2>Live Coding with Alpha</h2>
           <aside class="notes">
-            Live Coding (Probably can do all of this on the web somewhere)
-            - Start Vue project
-            - Install @ionic/vue
-            - Build and deploy to emulator -> iOS
+            Brave or Stupid either way I want to show working with
+            @ionic/vue alpha
           </aside>
         </section>
 
