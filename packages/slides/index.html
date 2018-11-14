@@ -48,7 +48,8 @@
           <aside class="notes">
             <li>Hi I am Josh Thomas, You can find me on github/twitter as jthoms1.
             <li>From Madison WI. So the I feel right at home in the cold.
-            <li>Story about below zero celcius email.
+            <li>Speaker email about dressing appropriately for the cold weather.
+            <li>It mentioned it would be below zero. I paniced. Then I realized.
           </aside>
         </section>
 
@@ -73,12 +74,11 @@
           data-background-image="/images/vue-intro-tweet.png"
           data-background-size="40%">
           <aside class="notes">
-            <li>
-              Being the organizer of a Meetup there are times where you need to step up and speak.
-            <li>So I keep a list of topics that I am interested in learning so that if I need to speaker I can learn something new.
-            <li>I thought myself Vue the day before my presentation</li>
+            <li>Being the organizer of a Meetup there are times where you need to step up and speak.
+            <li>So I keep a list of topics that I am interested in learning so that if I need step up at least I can learn something new.
+            <li>I taught myself Vue the day before my presentation</li>
             <li>This was very surprising to me.  I learned it and built an app with it in the same day</li>
-            <li>I built an app that worked and I had confidence that it was built with best practices</li>
+            <li>Not only did the app work but I had confidence that it was built with best practices. And I was able to teach others the next day</li>
           </aside>
         </section>
 
@@ -113,34 +113,41 @@
         <section>
           <section>
             <h2>What is Ionic?</h2>
+            <aside class="notes">
+              <li>Ionic is a framework for creating high quality applications
+              <li>Tradionally this has been mobile applications in a webview
+            </aside>
           </section>
           <section>
             <img width=500 class="nostyle" src="images/ionic-stack-1.png"/>
+            <aside class="notes">
+              <li>It is a collection of CSS + Javascript resources
+              <li>We call it the Ionic Framework because we provide more value than just components.
+            </aside>
           </section>
           <section>
             <img width=500 class="nostyle" src="images/ionic-stack-2.png"/>
+            <aside class="notes">
+              <li>The code is built in such a way that its components can be used with a number
+                of different frameworks.
+              <li>We currently only offically support Angular and Vanilla JS</li>
+              <li>But this will be changing very soon</li>
+            </aside>
           </section>
           <section>
             <img width=500 class="nostyle" src="images/ionic-stack-3.png"/>
+            <aside class="notes">
+              <li>Ionic also provides solutions for your appliction to interact with native devices through bridges</li>
+              <li>We have 2 ways of accomplishing this. One of these is Cordova and the other is Capacitor</li>
+              <li>Capacitor is a product we built and consider to be the spiritual successor to Cordova
+            </aside>
           </section>
           <section>
             <img width=500 class="nostyle" src="images/ionic-stack-4.png"/>
+            <aside class="notes">
+              <li>This means that you can also deploy your application to iOS, Android, and Electron. Obviously you can also ship it as a PWA</li>
+            </aside>
           </section>
-          <aside class="notes">
-            HOW IONIC FITS TOGETHER
-            <li>Ionic is a framework for creating high quality applications
-            <li>It is a collection of CSS + Javascript resources
-            <li>We call it the Ionic Framework because we provide more value than just components.
-            <li>--------------</li>
-            <li>The code is built in such a way that its components can be used with a number
-              of different frameworks.
-            <li>We currently only offically support Angular and Vanilla JS</li>
-            <li>But this is changing very soon</li>
-            <li>--------------</li>
-            <li>Ionic also provides solutions for your appliction to interact with native devices through bridges</li>
-            <li>We have 2 ways of accomplishing this. One of these is Cordova and the other is Capacitor which I will be talking about later</li>
-            <li>This means that you can also deploy your application to iOS, Android, and Electron. Obviously you can also ship it as a PWA</li>
-          </aside>
         </section>
 
         <section>
@@ -155,12 +162,14 @@
             <li class="fragment">Use a native bridge for device apis</li>
           </ul>
           <aside class="notes">
-            <li>Our stats show that Monthly almost every country in the world uses Ionic today.
+            <li>--------------</li>
+            <li>We have analytics and almost every country in the world uses Ionic today.
             <li>Except for one. North Korea
-            <li>The components range from buttons, to dialogs to form toggles, inputs, alerts.
+            <li>--------------</li>
+            <li>The components range from buttons, to dialogs, to form toggles, inputs, alerts.
             <li>One of the things that is very unique about all of our components is that they are built
               for both iOS and Material Design.
-            <li>So it is a truly cross platform codebase. Build it once and it will appear as Material for Android
+            <li>So it is a truly cross platform codebase. Build your app once and it will appear as Material for Android
               and as iOS on an Apple Product.
             <li>We also provide a set of components and APIs that allow you to interact with native device APIs.
               An example of this would be push notifications, haptic feedback, geo location, camera and a number
@@ -174,7 +183,8 @@
           <aside class="notes">
             <li>Beautiful design - We place a lot of value on the quality of our component designs. The nice thing
               is that it just looks this great out of the box.
-            <li>Notice that components reflect the native behavior for material design or for iOS such from Action Sheets or dialogs.
+            <li>Notice that components reflect the native behavior for material design or for iOS such from Action Sheets or alerts.
+            <li>Ionic also provides tabs and stacked routing which is expected for mobile applications.
             <li>We have 2 svg based icon sets as well. One for iOS and one for Material.  You might have used them before.
                Aptly named Ionicons</li>
             <li>Robust theming system based on css variables. So you can create a theme specific to your brand or change
@@ -186,7 +196,7 @@
           <h2>Extensive <a href="https://beta.ionicframework.com/docs/api/alert">documentation</a>.</h2>
           <aside class="notes">
             <li>Our documentation provides live examples, best practices, and example code.
-            <li>All supported frameworks also have code that corresponds to the live examples.
+            <li>All supported frameworks also have code that corresponds to the live examples. - currently this is Angular and Vanilla JS
             <li>Ionic is written entirely in Typescript so our API documentation gets generated on release
               to ensure that they stay up to date.  Nothing worse than outdated documenatation.
           </aside>
@@ -201,10 +211,10 @@
           </ul>
           <aside class="notes">
             <li>Web First, Adapts to the platform it is used on. Same codebase
-            Mobile App - WebView to access native code.
-            - Image of how Hybrid fits in (Capacitor not Cordova)
-            Web App - Shared Codebase. Not code sharing this is a single codebase
-            Desktop App - Electron integration with Capacitor for native access.
+            <li>--------------</li>
+            <li>Mobile App - WebView to access native code. Deploy to Apple App Store or Google Play
+            <li>Web App - Shared Codebase. Not code sharing this is a single codebase. Appears native
+            <li>Desktop App - Electron integration with Capacitor for native access.
           </aside>
         </section>
 
@@ -238,7 +248,7 @@
         <section class="interstitial" data-background-color="#4fc08d">
           <h2>Ionic and Vue</h2>
           <aside class="notes">
-
+            <li>Great now you know all about Ionic, but I am hear to talk about our relationship to Vue</li>
           </aside>
         </section>
 
@@ -250,29 +260,30 @@
             <li>I posted a poll and here are the results.  Not very scientific but it did provide us with some insight.
             <li>This was not the results I expected.  I though React would have won considering it has a larger user base.
             <li>But it made us start talking about more about it internally
-            <li>We saw many similarities between the Ionic and Vue Open Source Projects especially in our shared values.</li>
+            <li>We saw many similarities between the Ionic and Vue Open Source Projects especially in what we each valued.</li>
           </aside>
         </section>
 
         <section>
           <h2>Ionic and Vue</h2>
           <ul>
-            <li class="fragment">Ease of Use</li>
+            <li>Ease of Use</li>
             <li class="fragment">Approachable, Versatile, Performant <span class="fragment">(vuejs.org)</span></li>
             <li class="fragment">Excellent Documentation</li>
             <li class="fragment">Start with a little or a lot</li>
           </ul>
           <aside class="notes">
-            <li>How I think this initial experience interrelates to developing with Ionic.
-            <li>Easy of Use.
+            <li>Ease of Use.
             <li>From Vue Homepage - Approachable, Versatile, Performant (Progressive Framework)
             <li>Excellent Documentation for Beginners and Experts
             <li>Start with a little or Go all in. Use some components or use build entire apps in Ionic.
             <li>--------------</li>
+            <li>Living up to the our own expectations and what the Vue community expects would take some work</li>
+            <li>--------------</li>
             <li>We are a small team and working on multiple releases of Ionic can take some time.</li>
-            <li>Forunatly we have great trusted partners.
-            <li>Modus Create approached us and let us know that they really wanted Ionic for Vue
-            <li>They created a simple Ionic Vue application to prove its usecase.
+            <li>Forunatly we have great trusted partners like Modus Create. They are a digital design-build agency.
+            <li>Modus approached us and let us know that they really wanted Ionic for Vue
+            <li>They created a simple Ionic Vue application to prove its use case.
           </aside>
         </section>
 
@@ -304,8 +315,9 @@
         <section>
           Ionic Vue Announcement
           <aside class="notes">
-            Today I am happy to announce that we have released @ionic/vue in alpha.
-
+            <li>Today I am happy to announce that we have released @ionic/vue in alpha.
+            <li>When I say alpha I mean 0.0.1. All components are provided but we
+              need to improve our tests for the Vue bindings.
           </aside>
         </section>
 
@@ -327,8 +339,9 @@ new Vue({
           </pre>
           <aside class="notes">
             <li>We built @ionic/vue as a plugin
-            <li>This is not Ionic where you use Vue.
             <li>With this one line of code you know have access to all of the Ionic Components.
+            <li>Also because we provide lazy loaded web components you don't actually need to register the components
+            <li>And obviously since Ionic is built with Typescript you get types with it as well.
           </aside>
         </section>
 
@@ -359,7 +372,8 @@ new Vue({
           <h2>Next Steps</h2>
           <ul>
             <li class="fragment">Community Testing</li><br/>
-            <li class="fragment">Documentation</li><br/>
+            <li class="fragment">Tests</li><br/>
+            <li class="fragment">Update Documentation</li><br/>
           </ul>
           <aside class="notes">
             <li>This is where I ask you to give it a try and give feedback.
@@ -370,8 +384,10 @@ new Vue({
 
         <section>
           <h2>Thank You! <img class="emoji nostyle" src="images/thanks.png"/></h2>
-          <ul class="links">
-
+          <ul>
+            <li><a href="https://github.com/ionic-team/ionic">https://github.com/ionic-team/ionic</a></li>
+            <li><a href="https://ionicworldwide.herokuapp.com">https://ionicworldwide.herokuapp.com</a></li>
+            <li><a href="https://forum.ionicframework.com">https://forum.ionicframework.com</a></li>
           </ul>
           <aside class="notes">
           </aside>
